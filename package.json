@@ -1,0 +1,22 @@
+{
+  "name": "ci-test",
+  "version": "1.0.0",
+  "description": "ci test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/ut --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fouber/ci-test.git"
+  },
+  "keywords": [
+    "ci",
+    "test"
+  ],
+  "author": "fouber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fouber/ci-test/issues"
+  }
+}
