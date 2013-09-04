@@ -1,7 +1,4 @@
 var ci = require('ci-test');
+var assert = require('assert');
 
-describe('one',function(){
-    it('start', function(){
-        expect(ci.a).to.equal(123);
-    });
-});
+assert.equal(ci.a, 123, 'ci-test.a');
