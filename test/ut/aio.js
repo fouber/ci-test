@@ -6,7 +6,7 @@ console.log('start');
 assert.equal(ci.a, 123, 'ci-test.a');
 console.log('case 1');
 
-assert.equal(
+assert.deepEqual(
     ci._.filter(
         [1, 2, 3, 4, 5, 6],
         function(num){
