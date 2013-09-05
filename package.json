@@ -4,7 +4,7 @@
   "description": "ci test",
   "main": "index.js",
   "scripts": {
-    "test": "node test/ut/aio.js"
+    "test": "node_modules\\.bin\\mocha test/ut --recursive"
   },
   "repository": {
     "type": "git",

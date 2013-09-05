@@ -1,21 +1,11 @@
 var ci = require('../../index.js');
-var assert = require('assert');
+var expect = require('chai').expect;
 
-console.log('start');
-
-assert.equal(ci.a, 123, 'ci-test.a');
-console.log('case 1');
-
-assert.deepEqual(
-    ci._.filter(
-        [1, 2, 3, 4, 5, 6],
-        function(num){
-            return num % 2 == 0;
-        }
-    ),
-    [2, 4, 6],
-    'ci-test._.filter'
-);
-console.log('case 2');
-
-console.log('end');
+describe('general',function(){
+    it('equal', function(){
+        expect(ci.a).to.equal(123);
+    });
+    it('deep equal', function(){
+        expect(ci._.filter( [1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; } )).to.deep.equal([2, 4, 6]);
+    });
+});
