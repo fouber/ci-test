@@ -8,4 +8,7 @@ describe('general',function(){
     it('deep equal', function(){
         expect(ci._.filter( [1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; } )).to.deep.equal([2, 4, 6]);
     });
+    it('other', function(){
+        expect(1).to.equal(1);
+    });
 });
