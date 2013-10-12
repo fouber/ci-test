@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 
 describe('general',function(){
     it('equal', function(){
-        expect(ci.a).to.equal(123);
+        expect(ci.a).to.equal(1234);
     });
     it('deep equal', function(){
         expect(ci._.filter( [1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; } )).to.deep.equal([2, 4, 6]);
