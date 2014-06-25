@@ -6,15 +6,13 @@ env:
   global:
     - PATH: node_modules/.bin/:$PATH
     - secure: NttN6IGXC8yt2ScddO8jkHYoofRSzJq+O9r6p+JIABzSgUVNDgNcwhOWdCH80n216qvAMsMUzslLR21GDDKXn6Et4J8aOCMoEQNUOOSs+kaJEli5jjHRg8cDBtqZVLitwdxz6bicb9iLQn0iSz5Ce6rt6Zc+5l9W/iIHVuOsTPY=
-before_install:
-  - export pack_name=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
 install:
   - npm install fis
   - fis -v
 script:
   - fis release -Doumpd output
 after_success:
-  - echo ' ➥ Packing into ${pack_name} ...'
+  - echo ' ➥ Packing into ...'
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - sh build.sh
