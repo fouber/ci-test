@@ -3,23 +3,23 @@ node_js:
 - '0.10'
 env:
   global:
-  - PATH: node_modules/.bin/:$PATH
-  - pack_name: `date +%Y.%m.%d-%H.%M.%S`.tar.gz
-  - secure: NttN6IGXC8yt2ScddO8jkHYoofRSzJq+O9r6p+JIABzSgUVNDgNcwhOWdCH80n216qvAMsMUzslLR21GDDKXn6Et4J8aOCMoEQNUOOSs+kaJEli5jjHRg8cDBtqZVLitwdxz6bicb9iLQn0iSz5Ce6rt6Zc+5l9W/iIHVuOsTPY=
+    - PATH: node_modules/.bin/:$PATH
+    - pack_name: `date +%Y.%m.%d-%H.%M.%S`.tar.gz
+    - secure: NttN6IGXC8yt2ScddO8jkHYoofRSzJq+O9r6p+JIABzSgUVNDgNcwhOWdCH80n216qvAMsMUzslLR21GDDKXn6Et4J8aOCMoEQNUOOSs+kaJEli5jjHRg8cDBtqZVLitwdxz6bicb9iLQn0iSz5Ce6rt6Zc+5l9W/iIHVuOsTPY=
 install:
-- npm install fis
-- fis -v
+  - echo ' ➥ Packing into ${pack_name} ...'
+  - npm install fis
+  - fis -v
 script:
-- fis release -Doumpd output
-after_script:
-- echo ' ➥ Packing into ${pack_name} ...'
+  - fis release -Doumpd output
 after_success:
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- sh build.sh
+  - echo ' ➥ Packing into ${pack_name} ...'
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  - sh build.sh
 cache:
   directories:
-  - node_modules
+    - node_modules
 branches:
   only:
-  - master
+    - master
