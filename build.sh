@@ -1,14 +1,14 @@
 #!/bin/bash
 
 if [ -d output ]; then
-    echo ' ➥ Packing...'
+    echo '➥ Packing...'
     cd output
     output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
     tar zcvf ${output_file} **
     mv ${output_file} ..
     cd ..
     
-    echo ' ➥ Commit file [${output_file}]'
+    echo "➥ Commit file [${output_file}]"
     rm -rf output
     git fetch origin deploy
     git checkout deploy
@@ -18,6 +18,6 @@ if [ -d output ]; then
     git checkout master
     rm -f ${output_file}
 else
-    echo ' ➥ Error.'
+    echo '➥ Error.'
     exit 1
 fi
