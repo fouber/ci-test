@@ -13,8 +13,8 @@ if [ -d output ]; then
     git config user.email "travis@travis-ci.org"
     git config user.name "travis-ci"
     git fetch origin deploy
-    git pull origin deploy
     git checkout -b deploy
+    git pull origin deploy
     git add ${output_file}
     git commit -m "[ci skip] release ${output_file}"
     git push origin deploy
