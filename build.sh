@@ -9,11 +9,11 @@ if [ -d output ]; then
     rm -rf output
     
     echo "➥ Commit file [${output_file}]"
-    git config user.email "travis@travis-ci.org"
-    git config user.name "travis-ci"
     git clone --quiet --branch=deploy https://${GH_TOKEN}@github.com/fouber/ci-test deploy > /dev/null
     mv ${output_file} deploy
     cd deploy
+    git config user.email "travis@travis-ci.org"
+    git config user.name "travis-ci"
     git add ${output_file}
     git commit -m "release ${output_file}"
     git push origin deploy
