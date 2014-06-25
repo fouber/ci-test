@@ -1,2 +1,1 @@
-exports._ = require('underscore');
-exports.a = 123;
+console.log('hello world');
