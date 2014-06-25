@@ -3,7 +3,6 @@
 if [ -d output ]; then
     echo '➥ Packing...'
     cd output
-    output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
     tar zcvf ${output_file} **
     mv ${output_file} ..
     cd ..
