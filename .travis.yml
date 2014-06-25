@@ -8,15 +8,7 @@ before_install:
   - "npm install fis"
   - "fis -v"
 install:
-  - "output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz"
-  - "fis release -Doumpd output"
-  - "cd output"
-  - "tar zcvf ${output_file} **"
-  - "mv ${output_file} .."
-  - "cd .."
-  - "rm -rf output"
-  - "git checkout deploy"
-  - ""
+  - "sh build.sh"
 branches:
   only:
     - master

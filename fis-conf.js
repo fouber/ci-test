@@ -1,10 +1,6 @@
 fis.config.set('roadmap.path', [
     {
-        reg: 'LICENSE',
-        release: false
-    },
-    {
-        reg: '**/README.md',
+        reg: /\/(LICENSE|README\.md|build\.(sh|bat|cmd)$/i,
         release: false
     }
 ]);
