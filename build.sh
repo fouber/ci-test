@@ -10,8 +10,8 @@ if [ -d output ]; then
     
     echo "➥ Commit file [${output_file}]"
     git config credential.helper "store --file=.git/credentials"
-    git config user.email "travis@travis-ci.org"
-    git config user.name "travis-ci"
+    git config user.email "fouber.NET@gmail.com"
+    git config user.name "fouber"
     echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     git fetch origin deploy
     git checkout -b deploy
