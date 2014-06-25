@@ -1,7 +1,13 @@
- language: node_js
- node_js:
-   - "0.10"
-   - "0.8"
- before_install:
-   - "npm install mocha"
-   - "npm install chai"
+language: node_js
+node_js:
+  - "0.10"
+  - "0.8"
+env:
+  - PATH=node_modules/.bin/:$PATH
+before_install:
+  - "npm install fis"
+install:
+  - "fis -v"
+branches:
+  only:
+    - master
