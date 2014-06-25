@@ -8,7 +8,7 @@ env:
     - secure: NttN6IGXC8yt2ScddO8jkHYoofRSzJq+O9r6p+JIABzSgUVNDgNcwhOWdCH80n216qvAMsMUzslLR21GDDKXn6Et4J8aOCMoEQNUOOSs+kaJEli5jjHRg8cDBtqZVLitwdxz6bicb9iLQn0iSz5Ce6rt6Zc+5l9W/iIHVuOsTPY=
 before_install:
   - export output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
-  - echo "output_file: ${output_file}"
+  - echo "output_file=${output_file}"
 install:
   - npm install fis
   - fis -v
