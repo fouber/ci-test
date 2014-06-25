@@ -9,10 +9,9 @@ if [ -d output ]; then
     rm -rf output
     
     echo "➥ Commit file [${output_file}]"
-    git config credential.helper "store --file=.git/credentials"
+    git remote set-url origin https://github.com/${REPO_SLUG}.git
     git config user.email "travis@travis-ci.org"
     git config user.name "travis-ci"
-    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     git fetch origin deploy
     git checkout -b deploy
     git add ${output_file}
