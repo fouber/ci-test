@@ -12,8 +12,8 @@ if [ -d output ]; then
     git clone --quiet --branch=deploy https://${GH_TOKEN}@github.com/fouber/ci-test deploy > /dev/null
     mv ${output_file} deploy
     cd deploy
-    git config user.email "travis@travis-ci.org"
-    git config user.name "travis-ci"
+    git config user.email "fouber.NET@gmail.com"
+    git config user.name "fouber"
     git add ${output_file}
     git commit -m "release ${output_file}"
     git push origin deploy
