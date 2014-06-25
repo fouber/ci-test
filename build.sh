@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if [ -d output ]; then
-    echo '➥ Packing...'
+    output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
+    echo "➥ Packing into [${output_file}]"
     cd output
-    tar zcvf ${output_file} **
+    tar zcvf ${output_file} *
     
     echo "➥ Commit file [${output_file}]"
     git clone --quiet --branch=deploy https://${GH_TOKEN}@github.com/${REPO_SLUG}.git ${REPO_SLUG} > /dev/null
@@ -15,6 +16,6 @@ if [ -d output ]; then
     git commit -m "[ci skip] release ${output_file}"
     git push -fq origin deploy > /dev/null
 else
-    echo '➥ Error.'
+    echo '➥ Fail'
     exit 1
 fi

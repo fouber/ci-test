@@ -8,8 +8,6 @@ env:
   - PATH: node_modules/.bin/:$PATH
   - REPO_SLUG: fouber/ci-test
   - secure: cpinpnG9L0vL35VA4H/1CdSAmlq1rJOxpQ7J1k7EYskakcC3vKIRPYyBLU3Znr0Wt4AmulT3WR5H3KtaMrY+Yr4UUNbJWiOksWrnKz3gfebs8ayo8AqcT36tTQT/dzUm9Dei5XFAGNkdjs+/3gOg+JlxfXDIFyQPv598EUnqWK4=
-before_install:
-- export output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
 install:
 - npm install fis
 - fis -v
