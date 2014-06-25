@@ -10,10 +10,11 @@ if [ -d output ]; then
     
     echo "➥ Commit file [${output_file}]"
     git config credential.helper "store --file=.git/credentials"
+    git config user.email "travis@travis-ci.org"
+    git config user.name "travis-ci"
     echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-    git clone --depth=50 --branch=deploy https://github.com/fouber/ci-test.git ci-test
-    mv ${output_file} ci-test
-    cd ci-test
+    git fetch origin deploy
+    git checkout -b deploy
     git add ${output_file}
     git commit -m "release ${output_file}"
     git push origin deploy
