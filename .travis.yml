@@ -6,7 +6,7 @@ script:
 env:
   global:
   - PATH: node_modules/.bin/:$PATH
-  - secure: Ehzdr/fhcZO6LAj0MmDvAJuGG5kowaM1R9sYH2BDRmH6vO8YOVvWPZtaTMHCTns6CRlfNXFxArMwlOj7DwjiXgr4wcr4LfDdOV+W1Yd8rcfa8HrRqX1M6g3JglmntPyYbLnKwpDAwPDsBl0e0nWKRVbp3lSQ13djFp0Z0Rlifok=
+  - secure: Jb+h54Ucokc4t8hIw8+4hRX8nOIbp1ItlMy+Jz0V9808ZPBVw9e8huOuj2XobAKsmdx2ZjBh0P0zwswZ+81v9dUh+2SzztkC9MO1gGj0SV5F1FhbbWJQPF26A43muhQ1mOgCloTzuoBrMN4TA6lcIRIGeYAcnZOP7GONvK3CDq8=
 before_install:
 - export output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
 install:
