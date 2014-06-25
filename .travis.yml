@@ -5,7 +5,7 @@ node_js:
 env:
   - PATH=node_modules/.bin/:$PATH
 before_install:
-  - "npm install fis"
+  - "npm install fis@1.7.8"
   - "fis -v"
 install:
   - "sh build.sh"
