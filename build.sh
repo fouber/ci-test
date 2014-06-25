@@ -1,6 +1,5 @@
 #!/bin/bash
 
-fis release -Doumpd output
 if [ -d output ]; then
     cd output
     output_file=`date +%Y.%m.%d-%H.%M.%S`.tar.gz
@@ -15,6 +14,6 @@ if [ -d output ]; then
     git checkout master
     rm -f ${output_file}
 else
-    echo ' error.'
+    echo ' ➥ error.'
     exit 1
 fi
