@@ -6,13 +6,15 @@ if [ -d output ]; then
     tar zcvf ${output_file} **
     mv ${output_file} ..
     cd ..
+    rm -rf output
     
     echo "➥ Commit file [${output_file}]"
-    rm -rf output
+    git config credential.helper "store --file=.git/credentials"
+    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
     git fetch origin deploy
-    git checkout deploy
+    git checkout -b deploy
     git add ${output_file}
-    git commit -am "release ${output_file}"
+    git commit -m "release ${output_file}"
     git push origin deploy
     git checkout master
     rm -f ${output_file}
