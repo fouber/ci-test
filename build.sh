@@ -8,6 +8,12 @@ if [ -d output ]; then
     mv ${output_file} ..
     cd ..
     rm -rf output
+    git checkout deploy
+    git add ${output_file}
+    git commit -am "release ${output_file}"
+    git push origin deploy
+    git checkout master
+    rm -f ${output_file}
 else
     echo ' error.'
     exit 1
