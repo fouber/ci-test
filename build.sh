@@ -9,12 +9,11 @@ if [ -d output ]; then
     rm -rf output
     
     echo "➥ Commit file [${output_file}]"
-    git config credential.helper "store --file=.git/credentials"
-    git config user.email "fouber.NET@gmail.com"
-    git config user.name "fouber"
-    echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-    git fetch origin deploy
-    git checkout -b deploy
+    git config user.email "travis@travis-ci.org"
+    git config user.name "travis-ci"
+    git clone --quiet --branch=deploy https://${GH_TOKEN}@github.com/fouber/ci-test deploy > /dev/null
+    mv ${output_file} deploy
+    cd deploy
     git add ${output_file}
     git commit -m "release ${output_file}"
     git push origin deploy
