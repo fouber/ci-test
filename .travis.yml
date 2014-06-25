@@ -12,9 +12,6 @@ install:
 script:
   - fis release -Doumpd output
 after_success:
-  - echo " ➥ Packing into ..."
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - sh build.sh
 cache:
   directories:
