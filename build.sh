@@ -10,6 +10,7 @@ if [ -d output ]; then
     
     echo ' ➥ Commit file [${output_file}]'
     rm -rf output
+    git fetch origin deploy
     git checkout deploy
     git add ${output_file}
     git commit -am "release ${output_file}"
